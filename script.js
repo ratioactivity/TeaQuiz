@@ -82,3 +82,12 @@ restartBtn.onclick = () => {
   userAnswers = [];
   currentQuestion = 0;
 };
+
+const returnBtn = document.getElementById("return-btn");
+
+returnBtn.onclick = () => {
+  quizScreen.classList.remove("active");
+  introScreen.classList.add("active");
+  currentQuestion = 0;
+  userAnswers = [];
+};
