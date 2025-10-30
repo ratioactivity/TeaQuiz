@@ -31,61 +31,75 @@ body {
   display: flex;
 }
 
+/* ---------- INTRO / RESULTS BOX ---------- */
 .box {
   background-image: url('assets/Box.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 500px;
-  height: 400px;
+  width: 600px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px;
-  position: relative;
+  justify-content: space-evenly;
+  padding: 30px 40px;
 }
 
 .intro-text,
 .results-text {
+  font-family: 'Dogicapixel';
   font-size: 16px;
-  max-width: 380px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #3b3b3b;
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: center;
 }
 
+/* ---------- BUTTONS ---------- */
 .button {
-  width: 150px;
+  width: 250px;
   cursor: pointer;
-  margin-top: 20px;
+  filter: brightness(1.1);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
 }
 
 .button-text {
   position: relative;
-  top: -45px;
+  top: -70px;
   font-family: 'KiwiSoda';
-  font-size: 24px;
-  color: #3c3c3c;
+  font-size: 28px;
+  color: #2f2f2f;
   pointer-events: none;
+  text-shadow: 0px 1px 0px #cfcfcf;
 }
 
+/* ---------- QUIZ SECTION ---------- */
 .quiz-content {
   background: #eaf1e2;
   border: 2px solid #a6b3a0;
   border-radius: 10px;
   padding: 30px;
-  width: 550px;
-  min-height: 350px;
+  width: 600px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .question-text {
   font-family: 'KiwiSoda';
-  font-size: 24px;
+  font-size: 30px;
   color: #3b5c4e;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  line-height: 1.2;
 }
 
 .answers {
@@ -95,22 +109,24 @@ body {
 }
 
 .answers button {
-  background: #c9d9c1;
+  background: #cdddc8;
   border: 2px solid #8fa788;
-  padding: 10px 20px;
+  padding: 14px 20px;
   border-radius: 6px;
   cursor: pointer;
   transition: 0.2s;
+  font-family: 'Dogicapixel';
+  font-size: 16px;
 }
 
 .answers button:hover {
-  background: #b2c6a9;
+  background: #b7c9b2;
 }
 
 .nav-arrows {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .arrow {
@@ -121,4 +137,25 @@ body {
 
 .arrow:hover {
   transform: scale(1.1);
+}
+
+/* ---------- RETURN TO START BUTTON ---------- */
+#return-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Dogicapixel';
+  font-size: 14px;
+  background: #b9c9b2;
+  border: 2px solid #8fa788;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #2c2b29;
+  transition: 0.2s;
+}
+
+#return-btn:hover {
+  background: #a4bba0;
 }
