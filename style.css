@@ -49,10 +49,10 @@ body {
 
 .intro-heading {
   font-family: 'KiwiSoda';
-  font-size: 56px;
+  font-size: 46px;
   color: #2e3f32;
   margin: 0;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .intro-text,
@@ -144,12 +144,13 @@ body {
   background: #b7c9b2;
 }
 
+
 .nav-area {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  justify-items: center;
   margin-top: 30px;
-  gap: 40px;
   width: 100%;
 }
 
@@ -170,8 +171,8 @@ body {
   border: none;
   font-family: 'KiwiSoda';
   font-size: 26px;
-  color: #2f3c32;
-  text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.5);
+  color: #fbf6de;
+  text-shadow: 0px 2px 0px rgba(53, 73, 59, 0.6);
   cursor: pointer;
   padding: 0;
   transition: transform 0.2s, filter 0.2s;
