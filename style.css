@@ -58,10 +58,11 @@ body {
 .intro-text,
 .results-text {
   font-family: 'Dogicapixel';
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.55;
+  letter-spacing: 0.4px;
   color: #3b3b3b;
-  max-width: 360px;
+  max-width: 320px;
   margin: 0;
   text-align: center;
 }
@@ -95,9 +96,9 @@ body {
   color: #fbf6de;
   pointer-events: none;
   text-shadow: 0px 2px 0px rgba(62, 78, 69, 0.4);
-  top: 52%;
+  top: 56%;
   left: 50%;
-  transform: translate(-50%, -52%);
+  transform: translate(-50%, -56%);
   width: 80%;
   margin: 0;
   letter-spacing: 1px;
@@ -173,7 +174,7 @@ body {
   background: url('assets/Button.png') center/contain no-repeat;
   border: none;
   font-family: 'KiwiSoda';
-  font-size: 26px;
+  font-size: 23px;
   color: #fff6e0;
   text-shadow: 0px 3px 0px rgba(46, 63, 50, 0.65);
   cursor: pointer;
