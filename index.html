@@ -8,45 +8,45 @@
   <script defer src="script.js"></script>
 </head>
 <body>
+  <div class="app-shell">
+    <!-- Intro Screen -->
+    <div id="intro" class="screen active">
+      <div class="box">
+        <h1 class="intro-heading">Tea Match Quiz</h1>
+        <p class="intro-text">
+          Take this quiz to find the teas, ingredients, or blends that best suit your tastes.
+        </p>
+        <div class="button-container">
+          <img src="assets/Button.png" alt="Start Button" id="start-btn" class="button" />
+          <p class="button-text">Start</p>
+        </div>
+      </div>
+    </div>
 
-  <!-- Intro Screen -->
-  <div id="intro" class="screen active">
-    <div class="box">
-      <h1 class="intro-heading">Tea Match Quiz</h1>
-      <p class="intro-text">
-        Take this quiz to find the teas, ingredients, or blends that best suit your tastes.
-      </p>
-      <div class="button-container">
-        <img src="assets/Button.png" alt="Start Button" id="start-btn" class="button" />
-        <p class="button-text">Start</p>
+    <!-- Quiz Screen -->
+    <div id="quiz" class="screen">
+      <div class="quiz-content">
+        <div id="question" class="question-text"></div>
+        <div id="answers" class="answers"></div>
+
+        <div class="nav-area">
+          <img src="assets/Arrow-Back.png" alt="Back" id="prev-btn" class="arrow" />
+          <button id="return-btn" class="return-button">Return to Start</button>
+          <img src="assets/Arrow-Forward.png" alt="Next" id="next-btn" class="arrow" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results" class="screen">
+      <div class="box">
+        <p id="results-text" class="results-text"></p>
+        <div class="button-container">
+          <img src="assets/Button.png" alt="Restart Button" id="restart-btn" class="button" />
+          <p class="button-text">Retake Quiz</p>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- Quiz Screen -->
-  <div id="quiz" class="screen">
-    <div class="quiz-content">
-      <div id="question" class="question-text"></div>
-      <div id="answers" class="answers"></div>
-
-      <div class="nav-area">
-        <img src="assets/Arrow-Back.png" alt="Back" id="prev-btn" class="arrow" />
-        <button id="return-btn" class="return-button">Return to Start</button>
-        <img src="assets/Arrow-Forward.png" alt="Next" id="next-btn" class="arrow" />
-      </div>
-    </div>
-  </div>
-
-  <!-- Results Screen -->
-  <div id="results" class="screen">
-    <div class="box">
-      <p id="results-text" class="results-text"></p>
-      <div class="button-container">
-        <img src="assets/Button.png" alt="Restart Button" id="restart-btn" class="button" />
-        <p class="button-text">Retake Quiz</p>
-      </div>
-    </div>
-  </div>
-
 </body>
 </html>
