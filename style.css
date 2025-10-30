@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'KiwiSoda';
+  src: url('fonts/KiwiSoda.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Dogicapixel';
+  src: url('fonts/dogicapixel.ttf') format('truetype');
+}
+
+body {
+  background-color: #dfe8dc;
+  font-family: 'Dogicapixel', monospace;
+  color: #2c2b29;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.screen.active {
+  display: flex;
+}
+
+.box {
+  background-image: url('assets/Box.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+}
+
+.intro-text,
+.results-text {
+  font-size: 16px;
+  max-width: 380px;
+  line-height: 1.5;
+  color: #3b3b3b;
+}
+
+.button {
+  width: 150px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.button-text {
+  position: relative;
+  top: -45px;
+  font-family: 'KiwiSoda';
+  font-size: 24px;
+  color: #3c3c3c;
+  pointer-events: none;
+}
+
+.quiz-content {
+  background: #eaf1e2;
+  border: 2px solid #a6b3a0;
+  border-radius: 10px;
+  padding: 30px;
+  width: 550px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.question-text {
+  font-family: 'KiwiSoda';
+  font-size: 24px;
+  color: #3b5c4e;
+  margin-bottom: 20px;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.answers button {
+  background: #c9d9c1;
+  border: 2px solid #8fa788;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.answers button:hover {
+  background: #b2c6a9;
+}
+
+.nav-arrows {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.arrow {
+  width: 60px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.arrow:hover {
+  transform: scale(1.1);
+}
