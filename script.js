@@ -12,6 +12,52 @@ const questionEl = document.getElementById("question");
 const answersEl = document.getElementById("answers");
 const resultsText = document.getElementById("results-text");
 
+const appShell = document.querySelector(".app-shell");
+let baseWidth = 0;
+let baseHeight = 0;
+
+function cacheBaseDimensions() {
+  if (!appShell) return;
+  const width = appShell.offsetWidth;
+  const height = appShell.offsetHeight;
+  baseWidth = Math.max(baseWidth, width);
+  baseHeight = Math.max(baseHeight, height);
+}
+
+function applyScale() {
+  if (!baseWidth || !baseHeight) {
+    cacheBaseDimensions();
+  }
+
+  if (!baseWidth || !baseHeight) return;
+
+  const styles = window.getComputedStyle(document.body);
+  const paddingX = (parseFloat(styles.paddingLeft) || 0) + (parseFloat(styles.paddingRight) || 0);
+  const paddingY = (parseFloat(styles.paddingTop) || 0) + (parseFloat(styles.paddingBottom) || 0);
+  const availableWidth = Math.max(window.innerWidth - paddingX, 1);
+  const availableHeight = Math.max(window.innerHeight - paddingY, 1);
+
+  const widthScale = availableWidth / baseWidth;
+  const heightScale = availableHeight / baseHeight;
+  const scale = Math.min(widthScale, heightScale, 1);
+  document.documentElement.style.setProperty("--ui-scale", scale.toFixed(3));
+}
+
+window.addEventListener("resize", applyScale);
+
+function initScaling() {
+  cacheBaseDimensions();
+  applyScale();
+}
+
+if (document.readyState === "complete" || document.readyState === "interactive") {
+  initScaling();
+} else {
+  document.addEventListener("DOMContentLoaded", initScaling);
+}
+
+window.addEventListener("load", initScaling);
+
 // Temporary test questions — replace later with full data set
 const quizData = [
   {
@@ -54,6 +100,8 @@ function startQuiz() {
   quizScreen.classList.add("active");
   currentQuestion = 0;
   showQuestion();
+  cacheBaseDimensions();
+  applyScale();
 }
 
 function nextQuestion() {
@@ -77,6 +125,8 @@ function finishQuiz() {
   resultsScreen.classList.add("active");
 
   resultsText.textContent = "You’d love Green teas with floral or citrus notes!";
+  cacheBaseDimensions();
+  applyScale();
 }
 
 function restartQuiz() {
@@ -84,6 +134,8 @@ function restartQuiz() {
   introScreen.classList.add("active");
   userAnswers = [];
   currentQuestion = 0;
+  cacheBaseDimensions();
+  applyScale();
 }
 
 function returnToStart() {
@@ -91,6 +143,8 @@ function returnToStart() {
   introScreen.classList.add("active");
   userAnswers = [];
   currentQuestion = 0;
+  cacheBaseDimensions();
+  applyScale();
 }
 
 // Event listeners
